@@ -97,7 +97,7 @@ public double getFrequencyFromSimulation( String protSeq, int numIterations )
 			s = buff.toString();
 
 		}
-		System.out.println(s + "\t" + protSeq);
+		//System.out.println(s + "\t" + protSeq);
 		if (s.equals(protSeq))
 		{
 			observed = observed + 1;
@@ -115,20 +115,15 @@ public static void main(String[] args) throws Exception
 	String testProtein = uniformGen.getRandomProtein(5);
 	System.out.println(testProtein);
 	String testProtein2 = "ACD";
-	int numIterations =  10000000;
-	System.out.println(uniformGen.getFrequencyFromSimulation(testProtein2,numIterations));  // should be close
+	int numIterations =  100000000;
 	System.out.println(uniformGen.getExpectedFrequency(testProtein2));  // should be 0.05^3 = 0.000125
+	System.out.println(uniformGen.getFrequencyFromSimulation(testProtein2,numIterations));  // should be close
 
-//	String testProtein = "ACD";
-//	int numIterations =  10000000;
-//	System.out.println(uniformGen.getExpectedFrequency(testProtein));  // should be 0.05^3 = 0.000125
-//	System.out.println(uniformGen.getFrequencyFromSimulation(testProtein,numIterations));  // should be close
-	
-	//RandomProteinGenerator realisticGen = new RandomProteinGenerator(false);
+	RandomProteinGenerator realisticGen = new RandomProteinGenerator(false);
 	
 	// should be 0.072658 *  0.024692 * 0.050007 == 8.97161E-05
-	//System.out.println(realisticGen.getExpectedFrequency(testProtein));  
-	//System.out.println(realisticGen.getFrequencyFromSimulation(testProtein,numIterations));  // should be close
+	System.out.println(realisticGen.getExpectedFrequency(testProtein));  
+	System.out.println(realisticGen.getFrequencyFromSimulation(testProtein,numIterations));  // should be close
 	
 	
 	
